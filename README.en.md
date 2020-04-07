@@ -30,6 +30,7 @@ sudo nano /etc/nginx/sites-enabled/3cxpbx
 location /admin {
     include "/var/lib/3cxpbx/Bin/nginx/conf/shared-headers.conf";
     index index.html;
+    rewrite ^/admin(.*) /$1 break;rewrite ^/admin(.*) /$1 break;
     root "/var/lib/3cxpbx/Data/Http/wwwroot/admin";
     try_files $uri $uri/ @proxy;
 }
