@@ -45,6 +45,14 @@ location = / {
 }
 ```
 
+
+#### Para fazer redirect automático da porta 80 para 443 adicione a linha abaixo logo após "location = / {" no bloco server relacionado a porta 80, próximo da linha 140, [arquivo de exemplo neste link](https://raw.githubusercontent.com/abelmferreira/3cx-nginx-webclient-as-root-path/master/3cxpbx.conf).
+
+```bash
+    return 301 https://$host$request_uri;
+```
+
+
 ### Salve, teste se a sintaxe esta correta e recarregue o nginx para aplicar as alterações
 
 ```bash
